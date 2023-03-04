@@ -1,0 +1,41 @@
+class Node:
+    def __init__(self,value):
+        self.value= value
+        self.left = None
+        self.right = None
+        
+        
+def preOrder(root):
+    if(root== None):
+        return 
+    print(root.value,end = "")
+    preOrder(root.left)
+    preOrder(root.right)
+        
+def inOder(root):
+    if(root == None):
+        return
+    inOder(root.left)
+    print(root.value,end = '')
+    inOder(root.right)
+    
+def postOder(root):
+    if(root == None):
+        return 
+    postOder(root.left)
+    postOder(root.right)
+    print(root.value,end='')
+   
+tree = Node(0)
+root = Node(int(input("enter the root of the tree")))
+left = Node(int(input("enter the left sub child of the tree")))
+right= Node(int(input("enter the right sub child of the tree")))
+root.left= left
+root.right = right
+
+
+preOrder(root)
+print()
+inOder(root)
+print()
+postOder(root)
